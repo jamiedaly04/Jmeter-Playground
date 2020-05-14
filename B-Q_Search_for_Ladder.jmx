@@ -1,0 +1,863 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.2.1">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="B&amp;Q_Search_for_Ladder" enabled="true">
+      <stringProp name="TestPlan.comments">This test plan was created by the BlazeMeter converter v.2.3.14. Please contact support@blazemeter.com for further support.</stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+        <collectionProp name="HeaderManager.headers">
+          <elementProp name="Accept" elementType="Header">
+            <stringProp name="Header.name">Accept</stringProp>
+            <stringProp name="Header.value">*/*</stringProp>
+          </elementProp>
+          <elementProp name="User-Agent" elementType="Header">
+            <stringProp name="Header.name">User-Agent</stringProp>
+            <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36</stringProp>
+          </elementProp>
+          <elementProp name="Content-Type" elementType="Header">
+            <stringProp name="Header.name">Content-Type</stringProp>
+            <stringProp name="Header.value">text/plain;charset=UTF-8</stringProp>
+          </elementProp>
+        </collectionProp>
+      </HeaderManager>
+      <hashTree/>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="BASE_URL_1" elementType="Argument">
+            <stringProp name="Argument.name">BASE_URL_1</stringProp>
+            <stringProp name="Argument.value">www.diy.com</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+        <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+          <collectionProp name="Arguments.arguments"/>
+        </elementProp>
+        <stringProp name="HTTPSampler.domain"></stringProp>
+        <stringProp name="HTTPSampler.port"></stringProp>
+        <stringProp name="HTTPSampler.protocol"></stringProp>
+        <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+        <stringProp name="HTTPSampler.path"></stringProp>
+        <boolProp name="HTTPSampler.image_parser">true</boolProp>
+        <boolProp name="HTTPSampler.concurrentDwn">true</boolProp>
+        <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+        <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+        <stringProp name="HTTPSampler.response_timeout"></stringProp>
+      </ConfigTestElement>
+      <hashTree/>
+      <DNSCacheManager guiclass="DNSCachePanel" testclass="DNSCacheManager" testname="DNS Cache Manager" enabled="true">
+        <collectionProp name="DNSCacheManager.servers"/>
+        <boolProp name="DNSCacheManager.clearEachIteration">true</boolProp>
+        <boolProp name="DNSCacheManager.isCustomResolver">false</boolProp>
+      </DNSCacheManager>
+      <hashTree/>
+      <AuthManager guiclass="AuthPanel" testclass="AuthManager" testname="HTTP Authorization Manager" enabled="true">
+        <collectionProp name="AuthManager.auth_list"/>
+        <boolProp name="AuthManager.controlledByThreadGroup">false</boolProp>
+      </AuthManager>
+      <hashTree/>
+      <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+        <collectionProp name="CookieManager.cookies"/>
+        <boolProp name="CookieManager.clearEachIteration">true</boolProp>
+        <boolProp name="CookieManager.controlledByThreadGroup">false</boolProp>
+      </CookieManager>
+      <hashTree/>
+      <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager" enabled="true">
+        <boolProp name="clearEachIteration">true</boolProp>
+        <boolProp name="useExpires">false</boolProp>
+        <boolProp name="CacheManager.controlledByThread">false</boolProp>
+      </CacheManager>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration">0</stringProp>
+        <stringProp name="ThreadGroup.delay">0</stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Test" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://www.diy.com/rb_bf70766xfx?type=js&amp;session=%3D3%3Dsrv%3D8%3Dsn%3D322746A513083D4AB4C207687712981B%3Dperc%3D100000%3Dol%3D0%3Dmul%3D1%3Dapp%3A7457707b1f8ae747%3D1&amp;svrid=8&amp;flavor=post&amp;referer=https%3A%2F%2Fwww.diy.com%2F&amp;visitID=CHKOFHOFIEJLBNBRTFKFAOBBEFAHBBAL&amp;modifiedSince=1588811230686&amp;app=7457707b1f8ae747" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="flavor" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">flavor</stringProp>
+                  <stringProp name="Argument.value">post</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="app" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">app</stringProp>
+                  <stringProp name="Argument.value">7457707b1f8ae747</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="svrid" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">svrid</stringProp>
+                  <stringProp name="Argument.value">8</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="referer" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">referer</stringProp>
+                  <stringProp name="Argument.value">https://www.diy.com/</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="modifiedSince" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">modifiedSince</stringProp>
+                  <stringProp name="Argument.value">1588811230686</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="visitID" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">visitID</stringProp>
+                  <stringProp name="Argument.value">CHKOFHOFIEJLBNBRTFKFAOBBEFAHBBAL</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="session" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">session</stringProp>
+                  <stringProp name="Argument.value">=3=srv=8=sn=322746A513083D4AB4C207687712981B=perc=100000=ol=0=mul=1=app:7457707b1f8ae747=1</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="type" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">type</stringProp>
+                  <stringProp name="Argument.value">js</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="$a" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">$a</stringProp>
+                  <stringProp name="Argument.value">1|58|Ntt|D|x|1589117161330|1589117161373|1467|-|-|https://ir-ing-district.clicktale.net/ctn_v2/wr/?2769661820780960&amp;328&amp;10&amp;12&amp;0&amp;11&amp;8&amp;subsid=232876&amp;msgsize=120|-|b1589117161337e0m35z11|-|43|43|43$rId=RID_2418$rpId=891164034$domR=1589117100124$md=3,0^c1^c2^c3^c4:;12,GA1.2.1805465588.1589117101;16,1589117098250$url=https://www.diy.com/$title=B&amp;Q | DIY Products at Everyday Low Prices | DIY at B&amp;Q$vd=1359$latC=1$app=7457707b1f8ae747$visitID=CHKOFHOFIEJLBNBRTFKFAOBBEFAHBBAL$vs=1$fId=317097927_888$v=10177191024092634$vID=1589117097931KHPMIH86M8H9BCLQIAVB0PKRA68KSMLS$nV=1$time=1589117161430$cs=-1466613427</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">rb_bf70766xfx</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://www.diy.com/rb_bf70766xfx?type=js&amp;session=%3D3%3Dsrv%3D8%3Dsn%3D322746A513083D4AB4C207687712981B%3Dperc%3D100000%3Dol%3D0%3Dmul%3D1%3Dapp%3A7457707b1f8ae747%3D1&amp;svrid=8&amp;flavor=post&amp;referer=https%3A%2F%2Fwww.diy.com%2F&amp;visitID=CHKOFHOFIEJLBNBRTFKFAOBBEFAHBBAL&amp;modifiedSince=1588811230686&amp;app=7457707b1f8ae747" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="flavor" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">flavor</stringProp>
+                  <stringProp name="Argument.value">post</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="app" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">app</stringProp>
+                  <stringProp name="Argument.value">7457707b1f8ae747</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="svrid" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">svrid</stringProp>
+                  <stringProp name="Argument.value">8</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="referer" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">referer</stringProp>
+                  <stringProp name="Argument.value">https://www.diy.com/</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="modifiedSince" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">modifiedSince</stringProp>
+                  <stringProp name="Argument.value">1588811230686</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="visitID" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">visitID</stringProp>
+                  <stringProp name="Argument.value">CHKOFHOFIEJLBNBRTFKFAOBBEFAHBBAL</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="session" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">session</stringProp>
+                  <stringProp name="Argument.value">=3=srv=8=sn=322746A513083D4AB4C207687712981B=perc=100000=ol=0=mul=1=app:7457707b1f8ae747=1</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="type" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">type</stringProp>
+                  <stringProp name="Argument.value">js</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="$a" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">$a</stringProp>
+                  <stringProp name="Argument.value">1|59|Ntt|KD76|x|1589117162081|1589117162176|1472|-|-|https://ir-ing-district.clicktale.net/ctn_v2/wr/?2769661820780960&amp;328&amp;10&amp;13&amp;0&amp;12&amp;8&amp;subsid=232876&amp;msgsize=120|-|b1589117162099e0m35z11|-|53|53|95,2|60|x|xhr|x|1589117162136|1589117162176|1472|-|-|https://ir-ing-district.clicktale.net/ctn_v2/wr/?2769661820780960&amp;328&amp;10&amp;14&amp;0&amp;13&amp;8&amp;subsid=232876&amp;msgsize=120|-|b1589117162138e0m34z11|-|39|40$rId=RID_2418$rpId=891164034$domR=1589117100124$md=3,0^c1^c2^c3^c4:;12,GA1.2.1805465588.1589117101;16,1589117098250$url=https://www.diy.com/$title=B&amp;Q | DIY Products at Everyday Low Prices | DIY at B&amp;Q$vd=800$latC=99$app=7457707b1f8ae747$visitID=CHKOFHOFIEJLBNBRTFKFAOBBEFAHBBAL$vs=1$fId=317097927_888$v=10177191024092634$vID=1589117097931KHPMIH86M8H9BCLQIAVB0PKRA68KSMLS$nV=1$time=1589117162235$cs=746279602</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">rb_bf70766xfx</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://www.diy.com/rb_bf70766xfx?type=js&amp;session=%3D3%3Dsrv%3D8%3Dsn%3D322746A513083D4AB4C207687712981B%3Dperc%3D100000%3Dol%3D0%3Dmul%3D1%3Dapp%3A7457707b1f8ae747%3D1&amp;svrid=8&amp;flavor=post&amp;referer=https%3A%2F%2Fwww.diy.com%2F&amp;visitID=CHKOFHOFIEJLBNBRTFKFAOBBEFAHBBAL&amp;modifiedSince=1588811230686&amp;app=7457707b1f8ae747" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="flavor" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">flavor</stringProp>
+                  <stringProp name="Argument.value">post</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="app" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">app</stringProp>
+                  <stringProp name="Argument.value">7457707b1f8ae747</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="svrid" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">svrid</stringProp>
+                  <stringProp name="Argument.value">8</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="referer" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">referer</stringProp>
+                  <stringProp name="Argument.value">https://www.diy.com/</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="modifiedSince" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">modifiedSince</stringProp>
+                  <stringProp name="Argument.value">1588811230686</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="visitID" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">visitID</stringProp>
+                  <stringProp name="Argument.value">CHKOFHOFIEJLBNBRTFKFAOBBEFAHBBAL</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="session" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">session</stringProp>
+                  <stringProp name="Argument.value">=3=srv=8=sn=322746A513083D4AB4C207687712981B=perc=100000=ol=0=mul=1=app:7457707b1f8ae747=1</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="type" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">type</stringProp>
+                  <stringProp name="Argument.value">js</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="$a" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">$a</stringProp>
+                  <stringProp name="Argument.value">1|61|Ntt|KD68|x|1589117162625|1589117162711|1483|-|-|https://ir-ing-district.clicktale.net/ctn_v2/wr/?2769661820780960&amp;328&amp;10&amp;15&amp;0&amp;14&amp;8&amp;subsid=232876&amp;msgsize=120|-|b1589117162640e0m33z11|-|49|49|86,2|62|x|xhr|x|1589117162676|1589117162711|1483|-|-|https://ir-ing-district.clicktale.net/ctn_v2/wr/?2769661820780960&amp;328&amp;10&amp;16&amp;0&amp;15&amp;8&amp;subsid=232876&amp;msgsize=120|-|b1589117162678e0m32z11|-|35|35$rId=RID_2418$rpId=891164034$domR=1589117100124$md=3,0^c1^c2^c3^c4:;12,GA1.2.1805465588.1589117101;16,1589117098250$url=https://www.diy.com/$title=B&amp;Q | DIY Products at Everyday Low Prices | DIY at B&amp;Q$vd=532$latC=1$app=7457707b1f8ae747$visitID=CHKOFHOFIEJLBNBRTFKFAOBBEFAHBBAL$vs=1$fId=317097927_888$v=10177191024092634$vID=1589117097931KHPMIH86M8H9BCLQIAVB0PKRA68KSMLS$nV=1$time=1589117162773$cs=972023922</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">rb_bf70766xfx</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://www.diy.com/rb_bf70766xfx?type=js&amp;session=%3D3%3Dsrv%3D8%3Dsn%3D322746A513083D4AB4C207687712981B%3Dperc%3D100000%3Dol%3D0%3Dmul%3D1%3Dapp%3A7457707b1f8ae747%3D1&amp;svrid=8&amp;flavor=post&amp;referer=https%3A%2F%2Fwww.diy.com%2F&amp;visitID=CHKOFHOFIEJLBNBRTFKFAOBBEFAHBBAL&amp;modifiedSince=1588811230686&amp;app=7457707b1f8ae747" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="flavor" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">flavor</stringProp>
+                  <stringProp name="Argument.value">post</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="app" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">app</stringProp>
+                  <stringProp name="Argument.value">7457707b1f8ae747</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="svrid" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">svrid</stringProp>
+                  <stringProp name="Argument.value">8</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="referer" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">referer</stringProp>
+                  <stringProp name="Argument.value">https://www.diy.com/</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="modifiedSince" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">modifiedSince</stringProp>
+                  <stringProp name="Argument.value">1588811230686</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="visitID" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">visitID</stringProp>
+                  <stringProp name="Argument.value">CHKOFHOFIEJLBNBRTFKFAOBBEFAHBBAL</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="session" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">session</stringProp>
+                  <stringProp name="Argument.value">=3=srv=8=sn=322746A513083D4AB4C207687712981B=perc=100000=ol=0=mul=1=app:7457707b1f8ae747=1</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="type" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">type</stringProp>
+                  <stringProp name="Argument.value">js</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="$a" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">$a</stringProp>
+                  <stringProp name="Argument.value">1|63|Search|U|x|1589117165415|1589117165785|1404|-|-|https://ir-conductor.clicktale.net/monitor?t=chunk&amp;p=118&amp;2=2347877768139929&amp;v=1.5.5|-|b1589117165425e0m38z11|-|349|350$rId=RID_2418$rpId=891164034$domR=1589117100124$md=3,0^c1^c2^c3^c4:;12,GA1.2.1805465588.1589117101;16,1589117098250$url=https://www.diy.com/search?term=Ladder$title=Search results | DIY at B&amp;Q$vd=3011$sUrl=https://www.diy.com/$sTitle=B&amp;Q | DIY Products at Everyday Low Prices | DIY at B&amp;Q$latC=2$app=7457707b1f8ae747$visitID=CHKOFHOFIEJLBNBRTFKFAOBBEFAHBBAL$vs=1$fId=317097927_888$v=10177191024092634$vID=1589117097931KHPMIH86M8H9BCLQIAVB0PKRA68KSMLS$nV=1$time=1589117165793$cs=-575752225</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">rb_bf70766xfx</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="x-dtreferer" elementType="Header">
+                  <stringProp name="Header.name">x-dtreferer</stringProp>
+                  <stringProp name="Header.value">https://www.diy.com/</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://www.diy.com/rb_bf70766xfx?type=js&amp;session=%3D3%3Dsrv%3D8%3Dsn%3D322746A513083D4AB4C207687712981B%3Dperc%3D100000%3Dol%3D0%3Dmul%3D1%3Dapp%3A7457707b1f8ae747%3D1&amp;svrid=8&amp;flavor=post&amp;referer=https%3A%2F%2Fwww.diy.com%2F&amp;visitID=CHKOFHOFIEJLBNBRTFKFAOBBEFAHBBAL&amp;modifiedSince=1588811230686&amp;app=7457707b1f8ae747" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="flavor" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">flavor</stringProp>
+                  <stringProp name="Argument.value">post</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="app" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">app</stringProp>
+                  <stringProp name="Argument.value">7457707b1f8ae747</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="svrid" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">svrid</stringProp>
+                  <stringProp name="Argument.value">8</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="referer" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">referer</stringProp>
+                  <stringProp name="Argument.value">https://www.diy.com/</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="modifiedSince" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">modifiedSince</stringProp>
+                  <stringProp name="Argument.value">1588811230686</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="visitID" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">visitID</stringProp>
+                  <stringProp name="Argument.value">CHKOFHOFIEJLBNBRTFKFAOBBEFAHBBAL</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="session" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">session</stringProp>
+                  <stringProp name="Argument.value">=3=srv=8=sn=322746A513083D4AB4C207687712981B=perc=100000=ol=0=mul=1=app:7457707b1f8ae747=1</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="type" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">type</stringProp>
+                  <stringProp name="Argument.value">js</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="$a" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">$a</stringProp>
+                  <stringProp name="Argument.value">1|64|Search|C|x|1589117165427|1589117166397|1562|-|-|https://collect-eu-west-1.tealiumiq.com/kingfisher/b-and-q-wapp/2/i.gif|-|b1589117165445e0m234z1|-|340|341,2|65|x|xhr|x|1589117165736|1589117165883|1562|-|-|https://api.kingfisher.com/v2/mobile/products/BQUK?page[size]=24&amp;searchTerm=Ladder|-|b1589117165739e0m143z11|-|147|147,2|66|x|xhr|x|1589117165756|1589117165798|1404|-|-|https://ir-ing-district.clicktale.net/ctn_v2/wr/?2769661820780960&amp;328&amp;10&amp;18&amp;0&amp;17&amp;8&amp;subsid=232876&amp;msgsize=120|-|b1589117165758e0m33z11|-|42|42,2|67|x|xhr|x|1589117165800|1589117165839|1404|-|-|https://ir-ing-district.clicktale.net/ctn_v2/wr/?2769661820780960&amp;328&amp;10&amp;19&amp;0&amp;18&amp;8&amp;subsid=232876&amp;msgsize=120|-|b1589117165802e0m36z11|-|38|39,2|68|x|xhr|x|1589117165841|1589117166249|1562|-|-|https://ir-ing-district.clicktale.net/ctn_v2/wr/?2769661820780960&amp;328&amp;10&amp;20&amp;2&amp;0&amp;105&amp;subsid=232876&amp;msgsize=120|-|b1589117165845e0m49z11|-|408|408,2|69|x|xhr|x|1589117166127|1589117166274|1562|-|-|https://collect-eu-west-1.tealiumiq.com/kingfisher/b-and-q-wapp/2/i.gif|-|b1589117166129e0m38z11|-|147|147,2|70|x|xhr|x|1589117166265|1589117166301|1562|-|-|https://ir-ing-district.clicktale.net/ctn_v2/wr/?2769661820780960&amp;328&amp;10&amp;21&amp;0&amp;19&amp;8&amp;subsid=232876&amp;msgsize=120|-|b1589117166268e0m32z11|-|35|36,2|71|x|xhr|x|1589117166306|1589117166342|1562|-|-|https://ir-ing-district.clicktale.net/ctn_v2/wr/?2769661820780960&amp;328&amp;10&amp;22&amp;0&amp;20&amp;8&amp;subsid=232876&amp;msgsize=120|-|b1589117166308e0m33z11|-|36|36,2|72|x|xhr|x|1589117166343|1589117166397|1562|-|-|https://ir-ing-district.clicktale.net/ctn_v2/wr/?2769661820780960&amp;328&amp;10&amp;23&amp;3&amp;0&amp;105&amp;subsid=232876&amp;msgsize=120|-|b1589117166346e0m50z11|-|54|54$rId=RID_2418$rpId=891164034$domR=1589117100124$3p=62-1589117095760;ir-ing-district.clicktale.net|g|1|0|0|0|66918_66950|32|32|32$3p1=61-1589117095760;ir-ing-district.clicktale.net|g|1|0|0|0|66880_66914|33|33|33$3p2=60-1589117095760;ir-ing-district.clicktale.net|g|1|0|0|0|66378_66413|34|34|34$3p3=59-1589117095760;ir-ing-district.clicktale.net|g|1|0|0|0|66339_66374|35|35|35$3p4=58-1589117095760;ir-ing-district.clicktale.net|g|1|0|0|0|65577_65612|35|35|35;c.clicktale.net|g|1|0|0|0|65624_65655|31|31|31;ir-conductor.clicktale.net|g|1|0|0|0|66201_66235|34|34|34;bat.bing.com|g|0|1|0|0|1_70067|0|0|0$rt=62-1589117095760;https://ir-ing-district.clicktale.net/ctn_5Fv2/wr/?2769661820780960&amp;328&amp;10&amp;16&amp;0&amp;15&amp;8&amp;subsid=232876&amp;msgsize=120|b66918e0m32z1$rt1=61-1589117095760;https://ir-ing-district.clicktale.net/ctn_5Fv2/wr/?2769661820780960&amp;328&amp;10&amp;15&amp;0&amp;14&amp;8&amp;subsid=232876&amp;msgsize=120|b66880e0m33z1$rt2=60-1589117095760;https://ir-ing-district.clicktale.net/ctn_5Fv2/wr/?2769661820780960&amp;328&amp;10&amp;14&amp;0&amp;13&amp;8&amp;subsid=232876&amp;msgsize=120|b66378e0m34z1$rt3=59-1589117095760;https://ir-ing-district.clicktale.net/ctn_5Fv2/wr/?2769661820780960&amp;328&amp;10&amp;13&amp;0&amp;12&amp;8&amp;subsid=232876&amp;msgsize=120|b66339e0m35z1$rt4=58-1589117095760;https://ir-ing-district.clicktale.net/ctn_5Fv2/wr/?2769661820780960&amp;328&amp;10&amp;12&amp;0&amp;11&amp;8&amp;subsid=232876&amp;msgsize=120|b65577e0m35z1|https://c.clicktale.net/pageEvent?v=9.15.0&amp;pid=3675&amp;uu=77edb54d-4b7f-aa58-ce90-a97330acdea6&amp;sn=1&amp;pn=3&amp;value=CISQmgPgBAxgNgSxgaygQwHYBMoGcCmaATjABZQBGxQAAA_253D_253D&amp;isETR=false&amp;r=817587|b65624e0f0g0h0i0k2l30m31u415v43w43|https://ir-conductor.clicktale.net/monitor?t=chunk&amp;p=118&amp;2=2347877768139929&amp;v=1.5.5|b66201e0m34z1|https://bat.bing.com/action/0|b1m0A1$md=3,0^c1^c2^c3^c4:;12,GA1.2.1805465588.1589117101;16,1589117098250$url=https://www.diy.com/departments/tools-equipment/ladders-steps/DIY637114.cat#icamp=SRD_ladder$title=Ladders &amp; Steps | Extension Ladders &amp; Step Stools$vd=659$sUrl=https://www.diy.com/$sTitle=B&amp;Q | DIY Products at Everyday Low Prices | DIY at B&amp;Q$latC=1$app=7457707b1f8ae747$visitID=CHKOFHOFIEJLBNBRTFKFAOBBEFAHBBAL$vs=1$fId=317097927_888$v=10177191024092634$vID=1589117097931KHPMIH86M8H9BCLQIAVB0PKRA68KSMLS$nV=1$time=1589117166456$cs=279360824</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">rb_bf70766xfx</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="x-dtreferer" elementType="Header">
+                  <stringProp name="Header.name">x-dtreferer</stringProp>
+                  <stringProp name="Header.value">https://www.diy.com/</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://www.diy.com/rb_bf70766xfx?type=js&amp;session=%3D3%3Dsrv%3D8%3Dsn%3D322746A513083D4AB4C207687712981B%3Dperc%3D100000%3Dol%3D0%3Dmul%3D1%3Dapp%3A7457707b1f8ae747%3D1&amp;svrid=8&amp;flavor=post&amp;referer=https%3A%2F%2Fwww.diy.com%2Fdepartments%2Ftools-equipment%2Fladders-steps%2FDIY637114.cat%23icamp%3DSRD_ladder&amp;visitID=CHKOFHOFIEJLBNBRTFKFAOBBEFAHBBAL&amp;modifiedSince=1588811230686&amp;app=7457707b1f8ae747" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="flavor" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">flavor</stringProp>
+                  <stringProp name="Argument.value">post</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="app" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">app</stringProp>
+                  <stringProp name="Argument.value">7457707b1f8ae747</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="svrid" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">svrid</stringProp>
+                  <stringProp name="Argument.value">8</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="referer" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">referer</stringProp>
+                  <stringProp name="Argument.value">https://www.diy.com/departments/tools-equipment/ladders-steps/DIY637114.cat#icamp=SRD_ladder</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="modifiedSince" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">modifiedSince</stringProp>
+                  <stringProp name="Argument.value">1588811230686</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="visitID" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">visitID</stringProp>
+                  <stringProp name="Argument.value">CHKOFHOFIEJLBNBRTFKFAOBBEFAHBBAL</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="session" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">session</stringProp>
+                  <stringProp name="Argument.value">=3=srv=8=sn=322746A513083D4AB4C207687712981B=perc=100000=ol=0=mul=1=app:7457707b1f8ae747=1</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="type" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">type</stringProp>
+                  <stringProp name="Argument.value">js</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="$a" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">$a</stringProp>
+                  <stringProp name="Argument.value">1|73|Category_Image_Step_Ladders?$PROMO_460_460$|U|x|1589117168619|1589117168734|1365|-|-|https://ir-conductor.clicktale.net/monitor?t=chunk&amp;p=118&amp;2=2347877768139929&amp;v=1.5.5|-|b1589117168632e0m35z11|-|114|115|115$rId=RID_2418$rpId=891164034$domR=1589117100124$md=3,0^c1^c2^c3^c4:;12,GA1.2.1805465588.1589117101;16,1589117098250$url=https://www.diy.com/departments/tools-equipment/ladders-steps/step-ladders/DIY637148.cat$title=DIY Supplies &amp; Accessories | DIY at B&amp;Q$vd=2337$sUrl=https://www.diy.com/departments/tools-equipment/ladders-steps/DIY637114.cat#icamp=SRD_ladder$sTitle=Ladders &amp; Steps | Extension Ladders &amp; Step Stools$latC=3$app=7457707b1f8ae747$visitID=CHKOFHOFIEJLBNBRTFKFAOBBEFAHBBAL$vs=1$fId=317097927_888$v=10177191024092634$vID=1589117097931KHPMIH86M8H9BCLQIAVB0PKRA68KSMLS$nV=1$time=1589117168797$cs=-287874810</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">rb_bf70766xfx</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="x-dtreferer" elementType="Header">
+                  <stringProp name="Header.name">x-dtreferer</stringProp>
+                  <stringProp name="Header.value">https://www.diy.com/departments/tools-equipment/ladders-steps/DIY637114.cat#icamp=SRD_ladder</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://www.diy.com/rb_bf70766xfx?type=js&amp;session=%3D3%3Dsrv%3D8%3Dsn%3D322746A513083D4AB4C207687712981B%3Dperc%3D100000%3Dol%3D0%3Dmul%3D1%3Dapp%3A7457707b1f8ae747%3D1&amp;svrid=8&amp;flavor=post&amp;referer=https%3A%2F%2Fwww.diy.com%2Fdepartments%2Ftools-equipment%2Fladders-steps%2FDIY637114.cat%23icamp%3DSRD_ladder&amp;visitID=CHKOFHOFIEJLBNBRTFKFAOBBEFAHBBAL&amp;modifiedSince=1588811230686&amp;app=7457707b1f8ae747" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="flavor" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">flavor</stringProp>
+                  <stringProp name="Argument.value">post</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="app" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">app</stringProp>
+                  <stringProp name="Argument.value">7457707b1f8ae747</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="svrid" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">svrid</stringProp>
+                  <stringProp name="Argument.value">8</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="referer" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">referer</stringProp>
+                  <stringProp name="Argument.value">https://www.diy.com/departments/tools-equipment/ladders-steps/DIY637114.cat#icamp=SRD_ladder</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="modifiedSince" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">modifiedSince</stringProp>
+                  <stringProp name="Argument.value">1588811230686</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="visitID" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">visitID</stringProp>
+                  <stringProp name="Argument.value">CHKOFHOFIEJLBNBRTFKFAOBBEFAHBBAL</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="session" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">session</stringProp>
+                  <stringProp name="Argument.value">=3=srv=8=sn=322746A513083D4AB4C207687712981B=perc=100000=ol=0=mul=1=app:7457707b1f8ae747=1</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="type" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">type</stringProp>
+                  <stringProp name="Argument.value">js</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="$a" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">$a</stringProp>
+                  <stringProp name="Argument.value">1|74|Category_Image_Step_Ladders?$PROMO_460_460$|C|x|1589117168636|1589117170741|4251|-|-|https://api.kingfisher.com/v1/mobile/content/BQUK?path=%2Fdepartments%2Ftools-equipment%2Fladders-steps%2Fstep-ladders%2FDIY637148.cat&amp;presentation=templated&amp;userAgentBehaviour=forward|-|b1589117168717e0m375z11|-|457|458|2105,2|75|x|xhr|x|1589117168735|1589117168854|1365|-|-|https://ir-ing-district.clicktale.net/ctn_v2/wr/?2769662176395947&amp;328&amp;10&amp;3&amp;2&amp;0&amp;105&amp;subsid=232876&amp;msgsize=120|-|b1589117168739e0m114z11|-|118|119,2|76|x|xhr|x|1589117169347|1589117169683|4259|-|-|https://api.kingfisher.com/v1/mobile/products/BQUK?filter[state]=%2Fdepartments%2Ftools-and-equipment%2Fladders-and-steps%2Fstep-ladders%2F_%2FN-bl3&amp;isCategory=true&amp;page[size]=24|-|b1589117169350e0m331z11|-|335|336,2|77|x|xhr|x|1589117169363|1589117169407|1404|-|-|https://ir-ing-district.clicktale.net/ctn_v2/wr/?2769662176395947&amp;328&amp;10&amp;4&amp;0&amp;2&amp;8&amp;subsid=232876&amp;msgsize=120|-|b1589117169375e0m31z11|-|44|44,2|78|x|xhr|x|1589117169424|1589117169466|1404|-|-|https://ir-ing-district.clicktale.net/ctn_v2/wr/?2769662176395947&amp;328&amp;10&amp;5&amp;3&amp;0&amp;105&amp;subsid=232876&amp;msgsize=120|-|b1589117169426e0m39z11|-|42|42,2|79|x|xhr|x|1589117170067|1589117170401|4251|-|-|https://api.kingfisher.com/v1/mobile/relatedItems/BQUK?pageType=category&amp;url=https%3A%2F%2Fwww.diy.com%2Fdepartments%2Ftools-equipment%2Fladders-steps%2Fstep-ladders%2FDIY637148.cat|-|b1589117170069e0m69z11|-|333|334,2|80|x|xhr|x|1589117170098|1589117170395|4251|-|-|https://ir-ing-district.clicktale.net/ctn_v2/wr/?2769662176395947&amp;328&amp;10&amp;6&amp;0&amp;3&amp;8&amp;subsid=232876&amp;msgsize=120|-|b1589117170101e0m36z11|-|297|297,2|81|x|xhr|x|1589117170331|1589117170616|4251|-|-|https://ir-ing-district.clicktale.net/ctn_v2/auth/?pid=328&amp;uid=2769661107864043&amp;as=1&amp;1818215094&amp;subsid=232876&amp;msgsize=120|-|b1589117170334e0m41z11|-|104|201,3|84|x|xhr|x|1589117170448|1589117170616|4251|-|-|https://ir-ing-district.clicktale.net/ctn_v2/wr/?2769662233608958&amp;328&amp;10&amp;0&amp;0&amp;0&amp;8&amp;subsid=232876&amp;msgsize=120|-|b1589117170452e0m34z11|-|168|168,2|82|x|xhr|x|1589117170347|1589117170593|4251|-|-|https://ir-conductor.clicktale.net/monitor?t=auth&amp;p=118&amp;2=2347877768139929&amp;v=1.5.5|-|b1589117170351e0m36z11|-|245|246,2|83|x|xhr|x|1589117170419|1589117170613|4251|-|-|https://collect-eu-west-1.tealiumiq.com/kingfisher/b-and-q-wapp/2/i.gif|-|b1589117170422e0m44z11|-|194|194,2|85|x|xhr|x|1589117170575|1589117170629|4251|-|-|https://ir-ing-district.clicktale.net/ctn_v2/wr/?2769662233608958&amp;328&amp;10&amp;1&amp;0&amp;1&amp;8&amp;subsid=232876&amp;msgsize=120|-|b1589117170578e0m33z11|-|53|54,2|86|x|xhr|x|1589117170631|1589117170667|4251|-|-|https://ir-ing-district.clicktale.net/ctn_v2/wr/?2769662233608958&amp;328&amp;10&amp;2&amp;0&amp;2&amp;8&amp;subsid=232876&amp;msgsize=120|-|b1589117170634e0m32z11|-|35|36,2|87|x|xhr|x|1589117170650|1589117170688|4251|-|-|https://ir-ing-district.clicktale.net/ctn_v2/wr/?2769662233608958&amp;328&amp;10&amp;3&amp;0&amp;3&amp;8&amp;subsid=232876&amp;msgsize=120|-|b1589117170653e0m34z11|-|38|38,2|88|x|xhr|x|1589117170669|1589117170710|4251|-|-|https://ir-ing-district.clicktale.net/ctn_v2/wr/?2769662233608958&amp;328&amp;10&amp;4&amp;0&amp;4&amp;8&amp;subsid=232876&amp;msgsize=120|-|b1589117170672e0m37z11|-|40|40,2|89|x|xhr|x|1589117170692|1589117170741|4251|-|-|https://ir-ing-district.clicktale.net/ctn_v2/wr/?2769662233608958&amp;328&amp;10&amp;5&amp;1&amp;0&amp;105&amp;subsid=232876&amp;msgsize=120|-|b1589117170695e0m45z11|-|49|49$rId=RID_2418$rpId=891164034$domR=1589117100124$3p=71-1589117095760;ir-ing-district.clicktale.net|g|1|0|0|0|70548_70581|33|33|33$3p1=70-1589117095760;ir-ing-district.clicktale.net|g|1|0|0|0|70508_70540|32|32|32$3p2=68-1589117095760;ir-ing-district.clicktale.net|g|1|0|0|0|70085_70134|49|49|49$3p3=67-1589117095760;ir-ing-district.clicktale.net|g|1|0|0|0|70042_70078|36|36|36$3p4=66-1589117095760;ir-ing-district.clicktale.net|g|1|0|0|0|69998_70031|33|33|33$3p5=65-1589117095760;api.kingfisher.com|g|1|0|0|0|69979_70122|143|143|143$3p6=64-1589117095760;collect-eu-west-1.tealiumiq.com|2|1|0|0|0|0|1||0|0|0|69685_69919|234|234|234;bat.bing.com|g|2|0|0|0|69688_69917_69975_70014|135|39|230$3p7=63-1589117095760;ir-conductor.clicktale.net|g|1|0|0|0|69665_69703|38|38|38;c.clicktale.net|g|1|0|0|0|69667_69706|39|39|39$3p8=72-1589117095760;ir-ing-district.clicktale.net|g|5|0|0|0|70586_70636_70875_70916_71088_71123_71135_71168_71222_71261|40|32|50;www.google-analytics.com|g|1|0|0|0|70701_70801|100|100|100;ir-conductor.clicktale.net|g|3|0|0|0|71110_71150|35|34|35;c.clicktale.net|g|5|0|0|0|71121_71161|38|36|40$3p9=69-1589117095760;collect-eu-west-1.tealiumiq.com|2|1|0|0|0|0|1||0|0|0|70369_70407|38|38|38;www.dwin1.com|4|1|0|0|0|0|1||0|0|0|70370_70410|40|40|40;bat.bing.com|g|2|0|0|0|70384_70422_70485_70533|43|39|47;kingfisher.scene7.com|g|11|0|0|0|70387_70503|71|30|114;ct.pinterest.com|g|1|0|0|0|70485_70689|204|204|204;p-eu.brsrvr.com|2|2|0|0|0|0|2||0|0|0|70485_70530|43|41|45$rt=71-1589117095760;https://ir-ing-district.clicktale.net/ctn_5Fv2/wr/?2769661820780960&amp;328&amp;10&amp;22&amp;0&amp;20&amp;8&amp;subsid=232876&amp;msgsize=120|b70548e0m33z1$rt1=70-1589117095760;https://ir-ing-district.clicktale.net/ctn_5Fv2/wr/?2769661820780960&amp;328&amp;10&amp;21&amp;0&amp;19&amp;8&amp;subsid=232876&amp;msgsize=120|b70508e0m32z1$rt2=68-1589117095760;https://ir-ing-district.clicktale.net/ctn_5Fv2/wr/?2769661820780960&amp;328&amp;10&amp;20&amp;2&amp;0&amp;105&amp;subsid=232876&amp;msgsize=120|b70085e0m49z1$rt3=67-1589117095760;https://ir-ing-district.clicktale.net/ctn_5Fv2/wr/?2769661820780960&amp;328&amp;10&amp;19&amp;0&amp;18&amp;8&amp;subsid=232876&amp;msgsize=120|b70042e0m36z1$rt4=66-1589117095760;https://ir-ing-district.clicktale.net/ctn_5Fv2/wr/?2769661820780960&amp;328&amp;10&amp;18&amp;0&amp;17&amp;8&amp;subsid=232876&amp;msgsize=120|b69998e0m33z1$rt5=65-1589117095760;https://api.kingfisher.com/v2/mobile/products/BQUK?page[size]=24&amp;searchTerm=Ladder|b69979e0m143z1$rt6=64-1589117095760;https://collect-eu-west-1.tealiumiq.com/kingfisher/b-and-q-wapp/2/i.gif|b69685e0m234z1|https://bat.bing.com/actionp/0?ti=4049159&amp;Ver=2&amp;mid=30a7c61d-e1a8-31c3-a4cf-867a4aaa5856&amp;sid=1fb29687-464b-28d1-f2e8-de2192f94f0d&amp;evt=pageHide|b69688e0m230|https://bat.bing.com/action/0|b69975e0m39$rt7=63-1589117095760;https://ir-conductor.clicktale.net/monitor?t=chunk&amp;p=118&amp;2=2347877768139929&amp;v=1.5.5|b69665e0m38z1|https://c.clicktale.net/pageEvent?v=9.15.0&amp;pid=3675&amp;uu=77edb54d-4b7f-aa58-ce90-a97330acdea6&amp;sn=1&amp;pn=3&amp;value=CISQmgBAghA_252BEGUCWAXAphA6kgJh_252BCaAhgE4DGAFhCGQPYB2QAA_253D&amp;isETR=false&amp;r=611969|b69667e0f0g0h0i0k5l39m39u415v43w43$rt8=72-1589117095760;https://ir-ing-district.clicktale.net/ctn_5Fv2/wr/?2769661820780960&amp;328&amp;10&amp;23&amp;3&amp;0&amp;105&amp;subsid=232876&amp;msgsize=120|b70586e0m50z1|https://www.google-analytics.com/r/collect|b70701e0f0g1h1i56j24k56l99m100u517v42w42|https://ir-ing-district.clicktale.net/ctn_5Fv2/wr/?2769661820780960&amp;328&amp;10&amp;24&amp;0&amp;21&amp;9&amp;subsid=232876&amp;msgsize=120|b70875e0m41|https://ir-ing-district.clicktale.net/ctn_5Fv2/auth/?pid=328&amp;uid=2769661107864043&amp;as=1&amp;1319905063&amp;subsid=232876&amp;msgsize=120|b71088e0m35z11|https://ir-conductor.clicktale.net/monitor?t=end&amp;p=118&amp;2=2347877768139929&amp;v=1.5.5&amp;21=48001_252C32545&amp;12=21716&amp;13=36&amp;98=1589117102555&amp;28=3&amp;14=3&amp;9=20939&amp;3=2426704181627535&amp;4=2109599756549310&amp;5=6|b71110e0m34|https://ir-conductor.clicktale.net/monitor|b71114e0m35|https://ir-conductor.clicktale.net/monitor?t=auth&amp;p=118&amp;2=2347877768139929&amp;v=1.5.5|b71115e0m35z11|https://c.clicktale.net/events|b71121e0f0g0h0i0k6l35m36u415v43w43|https://c.clicktale.net/pageview|b71121e0f0g0h0i0k6l38m40u415v43w43|https://c.clicktale.net/pageEvent|b71121e0f0g0h0i0k6l38m39u415v43w43|https://c.clicktale.net/pageEvent|b71122e0f0g0h0i0k6l37m39u415v43w43|https://c.clicktale.net/pageEvent?v=9.15.0&amp;pid=3675&amp;uu=77edb54d-4b7f-aa58-ce90-a97330acdea6&amp;sn=1&amp;pn=4&amp;value=MIewdgZglg5gXAAgEoFMA2KCGBnFB9AJgAZiiBmMgRiAAA_253D_253D&amp;isETR=false&amp;r=701630|b71122e0f0g0h0i0k6l37m39u415v43w43|https://ir-ing-district.clicktale.net/ctn_5Fv2/wr/?2769662176395947&amp;328&amp;10&amp;0&amp;0&amp;0&amp;8&amp;subsid=232876&amp;msgsize=120|b71135e0m32z11|https://ir-ing-district.clicktale.net/ctn_5Fv2/wr/?2769662176395947&amp;328&amp;10&amp;1&amp;1&amp;0&amp;105&amp;subsid=232876&amp;msgsize=120|b71222e0m39z11$rt9=69-1589117095760;https://collect-eu-west-1.tealiumiq.com/kingfisher/b-and-q-wapp/2/i.gif|b70369e0m38z1|https://www.dwin1.com/483.js|b70370e0m40|https://bat.bing.com/actionp/0?ti=4049159&amp;Ver=2&amp;mid=006c0da6-26cf-12b7-75ad-50c73992285d&amp;sid=1fb29687-464b-28d1-f2e8-de2192f94f0d&amp;evt=pageHide|b70384e0m39|https://kingfisher.scene7.com/is/image/Kingfisher/Category_5FImage_5FStep_5FLadders?$PROMO_5F460_5F460$|b70387e0m30|https://kingfisher.scene7.com/is/image/Kingfisher/Category_5FImage_5FLoft_5FLadders?$PROMO_5F460_5F460$|b70387e0m37|https://kingfisher.scene7.com/is/image/Kingfisher/Category_5FImage_5FExtension_5FLadders?$PROMO_5F460_5F460$|b70387e0m47|https://kingfisher.scene7.com/is/image/Kingfisher/Category_5FImage_5FCombination_5FLadders?$PROMO_5F460_5F460$|b70387e0m55|https://kingfisher.scene7.com/is/image/Kingfisher/Category_5FImage_5FTelescopic_5FLadders?$PROMO_5F460_5F460$|b70388e0m63|https://kingfisher.scene7.com/is/image/Kingfisher/Category_5FImage_5FPlatform_5FLadders?$PROMO_5F460_5F460$|b70388e0m70|https://kingfisher.scene7.com/is/image/Kingfisher/Category_5FImage_5FStep_5FStools?$PROMO_5F460_5F460$|b70388e0m78|https://kingfisher.scene7.com/is/image/Kingfisher/Category_5FImage_5FWarehouse_5FSteps?$PROMO_5F460_5F460$|b70388e0m85|https://kingfisher.scene7.com/is/image/Kingfisher/Category_5FImage_5FLadder_5FAccessories?$PROMO_5F460_5F460$|b70388e0m92|https://kingfisher.scene7.com/is/image/Kingfisher/Loft_5FBuildingregulation_5FIntro?crop=7^c845^c1692^c1128&amp;anchor=853^c1409&amp;$Article_5F600_5F400$&amp;$PROMO_5F600_5F400$|b70388e0m112|https://kingfisher.scene7.com/is/image/Kingfisher/Tools_5FLadders_5F2014?crop=4^c664^c1990^c1327&amp;anchor=999^c1327&amp;$Article_5F600_5F400$&amp;$PROMO_5F600_5F400$|b70389e0m114|https://ct.pinterest.com/v3/|b70485e0m204|https://p-eu.brsrvr.com/pix.gif|b70485e0m41|https://p-eu.brsrvr.com/pix.gif|b70485e0m45|https://bat.bing.com/action/0|b70485e0m47$md=3,0^c1^c2^c3^c4:;12,GA1.2.1805465588.1589117101;16,1589117098250$url=https://www.diy.com/departments/tools-equipment/ladders-steps/step-ladders/DIY637148.cat$title=Step Ladders | DIY at B&amp;Q$vd=2001$sUrl=https://www.diy.com/departments/tools-equipment/ladders-steps/DIY637114.cat#icamp=SRD_ladder$sTitle=Ladders &amp; Steps | Extension Ladders &amp; Step Stools$latC=9$app=7457707b1f8ae747$visitID=CHKOFHOFIEJLBNBRTFKFAOBBEFAHBBAL$vs=1$fId=317097927_888$v=10177191024092634$vID=1589117097931KHPMIH86M8H9BCLQIAVB0PKRA68KSMLS$nV=1$time=1589117170802$cs=1705718464</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">rb_bf70766xfx</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="x-dtreferer" elementType="Header">
+                  <stringProp name="Header.name">x-dtreferer</stringProp>
+                  <stringProp name="Header.value">https://www.diy.com/departments/tools-equipment/ladders-steps/DIY637114.cat#icamp=SRD_ladder</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://www.diy.com/rb_bf70766xfx?type=js&amp;session=%3D3%3Dsrv%3D8%3Dsn%3D322746A513083D4AB4C207687712981B%3Dperc%3D100000%3Dol%3D0%3Dmul%3D1%3Dapp%3A7457707b1f8ae747%3D1&amp;svrid=8&amp;flavor=post&amp;referer=https%3A%2F%2Fwww.diy.com%2Fdepartments%2Ftools-equipment%2Fladders-steps%2Fstep-ladders%2FDIY637148.cat&amp;visitID=CHKOFHOFIEJLBNBRTFKFAOBBEFAHBBAL&amp;modifiedSince=1588811230686&amp;app=7457707b1f8ae747" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="flavor" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">flavor</stringProp>
+                  <stringProp name="Argument.value">post</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="app" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">app</stringProp>
+                  <stringProp name="Argument.value">7457707b1f8ae747</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="svrid" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">svrid</stringProp>
+                  <stringProp name="Argument.value">8</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="referer" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">referer</stringProp>
+                  <stringProp name="Argument.value">https://www.diy.com/departments/tools-equipment/ladders-steps/step-ladders/DIY637148.cat</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="modifiedSince" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">modifiedSince</stringProp>
+                  <stringProp name="Argument.value">1588811230686</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="visitID" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">visitID</stringProp>
+                  <stringProp name="Argument.value">CHKOFHOFIEJLBNBRTFKFAOBBEFAHBBAL</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="session" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">session</stringProp>
+                  <stringProp name="Argument.value">=3=srv=8=sn=322746A513083D4AB4C207687712981B=perc=100000=ol=0=mul=1=app:7457707b1f8ae747=1</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="type" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">type</stringProp>
+                  <stringProp name="Argument.value">js</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="$3p" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">$3p</stringProp>
+                  <stringProp name="Argument.value">73-1589117095760;c.clicktale.net|g|2|0|0|0|72864_72910|35|34|35;ir-conductor.clicktale.net|g|1|0|0|0|72872_72906|35|35|35$rt=73-1589117095760;https://c.clicktale.net/pageEvent?v=9.15.0&amp;pid=3675&amp;uu=77edb54d-4b7f-aa58-ce90-a97330acdea6&amp;sn=1&amp;pn=4&amp;value=CISQmgBAPhDCCGAXApgcwPYCcCWyDO0EAMvACanKYEBkEAyigA55AA_253D_253D&amp;isETR=false&amp;r=973380|b72864e0f0g0h0i0k2l30m35u415v43w43|https://ir-conductor.clicktale.net/monitor?t=chunk&amp;p=118&amp;2=2347877768139929&amp;v=1.5.5|b72872e0m35z1|https://c.clicktale.net/pageEvent?v=9.15.0&amp;pid=3675&amp;uu=77edb54d-4b7f-aa58-ce90-a97330acdea6&amp;sn=1&amp;pn=4&amp;value=GoUQBAIgkgmmA_252BYAKAZJCwCED2APApgM5AA_253D&amp;isETR=false&amp;r=830151|b72876e0f0g0h0i0k4l31m34u415v43w43$url=https://www.diy.com/departments/tools-equipment/ladders-steps/step-ladders/DIY637148.cat$title=Step Ladders | DIY at B&amp;Q$latC=2$app=7457707b1f8ae747$visitID=CHKOFHOFIEJLBNBRTFKFAOBBEFAHBBAL$vs=1$fId=317097927_888$v=10177191024092634$vID=1589117097931KHPMIH86M8H9BCLQIAVB0PKRA68KSMLS$time=1589117172872$cs=-913943019</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">rb_bf70766xfx</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
